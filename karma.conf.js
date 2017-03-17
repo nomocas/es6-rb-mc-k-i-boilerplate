@@ -36,7 +36,7 @@ module.exports = function(config) {
             plugins: [
                 babel(babelrc())
             ],
-            moduleName:'mutater',
+            moduleName:'__MY__PROJECT__',
             format: 'iife', // helps prevent naming collisions
             sourceMap: 'inline', // sensible for testing
         },

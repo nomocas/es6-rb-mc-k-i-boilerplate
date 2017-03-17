@@ -1,14 +1,16 @@
 {
-  "name": "mutater",
-  "version": "0.0.2",
-  "description": "Mutate a copy of data without changing the original source.",
+  "name": "es6-rb-mc-k-i-boilerplate",
+  "version": "0.0.1",
+  "description": "Full ES6 module boilerplate with rollup/babel and mocha/chai/karma/istanbul",
   "main": "dist/bundles/index.js",
   "module": "dist/bundles/index.mjs",
   "jsnext:main": "dist/bundles/index.mjs",
 
   "scripts": {
     "prebuild": "eslint src test",
-    "build": "npm run bundles-build && uglifyjs dist/bundles/index.js -m -o dist/bundles/index.min.js",
+    "build": "npm run es5-build && npm run bundles-build && uglifyjs dist/bundles/index.js -m -o dist/bundles/index.min.js",
+    "es5-build": "babel src -d dist/es5",
+    "es5-watch": "babel src -d dist/es5 -w",
     "bundles-build": "rollup -c",
     "bundles-watch": "rollup -c -w",
     "pretest": "npm run build",
@@ -27,7 +29,10 @@
   },
 
   "keywords":[
-    "immutable"
+    "es6",
+    "boilerplate",
+    "test",
+    "coverage"
   ],
   
   "author": "Gilles Coomans",
