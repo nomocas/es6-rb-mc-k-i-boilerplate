@@ -12,7 +12,7 @@ export default {
     {
       dest: pkg.main,
       format: 'umd',
-      moduleName: '__MY__PROJECT__',
+      moduleName: 'mutater',
       sourceMap: true
     },
     {

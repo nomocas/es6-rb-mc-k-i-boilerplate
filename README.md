@@ -1,50 +1,87 @@
-# ES6 module boilerplate with full ES6 test suits and coverage
+# Mutater
 
-Largely inspired from https://istanbul.js.org/docs/tutorials/es2015/ and https://github.com/bcoe/es2015-coverage. Added : rollup bundling and karma runner + clean and complete.
+[![Travis branch](https://img.shields.io/travis/nomocas/mutater/master.svg)](https://travis-ci.org/nomocas/mutater)
+[![npm](https://img.shields.io/npm/v/mutater.svg)]()
+[![npm-downloads](https://img.shields.io/npm/dm/mutater.svg)]()
+[![licence](https://img.shields.io/npm/l/mutater.svg)](https://spdx.org/licenses/MIT)
+[![dependecies](https://img.shields.io/david/nomocas/mutater.svg)]()
+[![dev-dependencies](https://img.shields.io/david/dev/nomocas/mutater.svg)]()
 
-- ES6 sources
-- transpiled with [babel](https://babeljs.io) (to dist/es5/*)
-- bundled with [rollup](https://github.com/rollup/rollup) (to dist/bundles/*)
-- ES6 tests with [mocha](https://mochajs.org) and [chai](http://chaijs.com/) (runned directly from es6 with [babel-register](https://babeljs.io/docs/usage/babel-register/))
-- [karma](http://karma-runner.github.io) runner with on-the-fly rollup/babel bundling
-- Code coverage with [istanbul](https://istanbul.js.org/) and [nyc](https://github.com/istanbuljs/nyc) directly from ES6 tests and sources (no bundle)
+Immutable helper for Objects and Arrays.
 
-- [eslint](http://eslint.org) ES6 base config for src and test
+Mutate a copy of data without changing the original source.
+
+Natural Chained Syntax. Only makes a shallow copy of log n objects (those modified) and reuses the rest.
+
+ES5/ES6 distributions files. Small (1.0 Ko min/gzip) and Fast (minimal copy and actions).
+
+Of course useful with React-style libs (aka (re)render based on dom-diffing).
 
 ## Usage
 
-clone this repo then :
+```javascript
+import mutate from 'mutater';  // or var mutate = require('mutater');
+
+const obj = { a: { b: { c: 'hop', d:[] } }, e:true }
+const newObj = mutate(obj)
+	.from('a.b',
+		mutate.set('c', 'foo')
+		.push('d', 123)
+	)
+	.delete(e)
+	.val();
+
+
+// obj ==  { a: { b: { c: 'hop', d:[] } }, e:true } // the original one
+// newObj ==  { a: { b: { c: 'foo', d:[123] } } }
 
 ```
-> npm i
+
+Rem : Never forget .val() at end of sentence to return actual value.
+
+
+## API
+
+```javascript
+mutate(myObj)
+.set(key, value) // obj[key] = value
+.toggle(key)     // obj[key] = !obj[key];
+.delete(key) 	// delete obj[key];
+
+// object handling
+.merge(key, value) 	// obj[key] = Object.assign({}, obj[key], value); (shallow)
+
+// array handling
+.push(key, value) // obj[key].push(value);
+.pop(key) // obj[key].pop()
+.unshift(key, value) // obj[key].unshift(value);
+.shift(key) // obj[key].shift()
+.splice(key, index, number, ...value) // obj[key].splice(index, number, ...value)
+.toggleInArray(key, value)  // remove or add value in obj[key]
+
+// deeper modifications : move to path.to.sub.object and shallow copy path's node, then apply actions
+.from('path.to.sub.object', mutateActions)
+
+// End of chain : return new object (modified one)
+.val()
 ```
 
-then :
 
-- build : `> npm run build`
-- test :  `> mocha` or `> npm test`
-- karma : `> npm run karma`
-- cover : `> npm run cover`
-- es5-watch : `> npm run es5-watch`
-- bundles-watch : `> npm run bundles-watch`
+"From" case :
+```javascript
+const newObj = mutate(myObj) // at "root" : use mutate(obj) call to init mutation sentence...
+.from('a.b.c', 
+	mutate  // inner actions : start without call
+		.set('d', myValue)
+		.pop('e')
+		...
+)
+...
+.val();
 
+```
 
-Don't forget to change :
-- package.json : infos (Module name, author, etc)
-- karma.conf.js and rollup.config.js : change __MY__PROJECT__ to the UMD module name of your choice
-
-## Produced outputs
-
-- dist/es5/* : commonjs unbundled files (transpiled with babel)
-- dist/bundles/index.js : umd module
-- dist/bundles/index.min.js : umd module minified with uglifyjs
-- dist/bundles/index.mjs : ES module
-
-## Bundling with third party libs
-
-If you want to do so (for UMD modules either for distribution or karma tests), you should use :
-- [rollup-plugin-node-resolve](https://github.com/rollup/rollup-plugin-node-resolve)
-- [rollup-plugin-commonjs](https://github.com/rollup/rollup-plugin-commonjs)
+Rem : inner actions does not implement .val(). (so no need to call it)
 
 
 ## Licence
