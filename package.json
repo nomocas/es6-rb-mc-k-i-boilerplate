@@ -1,6 +1,6 @@
 {
   "name": "es6-rb-mc-k-i-boilerplate",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Full ES6 module boilerplate with rollup/babel and mocha/chai/karma/istanbul",
   "main": "dist/bundles/index.js",
   "module": "dist/bundles/index.mjs",
