@@ -35,7 +35,6 @@ then :
 - es5-watch : `> npm run es5-watch`
 - bundles-watch : `> npm run bundles-watch`
 
-
 ## Produced outputs
 
 - dist/es5/* : commonjs unbundled files (transpiled with babel)
@@ -47,7 +46,7 @@ then :
 
 Travis is configured to run coveralls by default.
 
-So either you remove coveralls run in travis config file, or add a .coveralls.yml with your "repo_token: ......" before pushing to travis (after a first manual npm run coveralls).
+So either you remove coveralls run in travis config file, or add a .coveralls.yml with your "repo_token: ......" before pushing to travis (after a first manual `npm run coveralls`).
 
 
 ## Licence
