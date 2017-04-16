@@ -1,6 +1,7 @@
 # ES6 module boilerplate with full ES6 test suits and coverage
 
-Largely inspired from https://istanbul.js.org/docs/tutorials/es2015/ and https://github.com/bcoe/es2015-coverage. Added : rollup bundling and karma runner + clean and complete.
+Inspired from https://istanbul.js.org/docs/tutorials/es2015/ and https://github.com/bcoe/es2015-coverage. 
+Added : rollup bundling and karma runner + clean and complete.
 
 - ES6 sources
 - transpiled with [babel](https://babeljs.io) (to dist/es5/*)
@@ -8,7 +9,10 @@ Largely inspired from https://istanbul.js.org/docs/tutorials/es2015/ and https:/
 - ES6 tests with [mocha](https://mochajs.org) and [chai](http://chaijs.com/) (runned directly from es6 with [babel-register](https://babeljs.io/docs/usage/babel-register/))
 - [karma](http://karma-runner.github.io) runner with on-the-fly rollup/babel bundling
 - Code coverage with [istanbul](https://istanbul.js.org/) and [nyc](https://github.com/istanbuljs/nyc) directly from ES6 tests and sources (no bundle)
-
+- [coveralls](https://coveralls.io) reporting
+- [standard-version](https://github.com/conventional-changelog/standard-version) for semver management and Changelog.md generation.
+- [travis.ci](https://travis-ci.org/) config file
+- [esdoc](https://esdoc.org) config file
 - [eslint](http://eslint.org) ES6 base config for src and test
 
 ## Usage
@@ -29,22 +33,18 @@ then :
 - bundles-watch : `> npm run bundles-watch`
 
 
-Don't forget to change :
-- package.json : infos (Module name, author, etc)
-- karma.conf.js and rollup.config.js : change __MY__PROJECT__ to the UMD module name of your choice
-
 ## Produced outputs
 
 - dist/es5/* : commonjs unbundled files (transpiled with babel)
-- dist/bundles/index.js : umd module
-- dist/bundles/index.min.js : umd module minified with uglifyjs
+- dist/bundles/index.js : cjs module
+- dist/bundles/index.min.js : cjs module minified with uglifyjs
 - dist/bundles/index.mjs : ES module
 
-## Bundling with third party libs
+## For coveralls 
 
-If you want to do so (for UMD modules either for distribution or karma tests), you should use :
-- [rollup-plugin-node-resolve](https://github.com/rollup/rollup-plugin-node-resolve)
-- [rollup-plugin-commonjs](https://github.com/rollup/rollup-plugin-commonjs)
+Travis is configured to run coveralls by default.
+
+So either you remove coveralls run in travis config file, or add a .coveralls.yml with your "repo_token: ......" before pushing to travis (after a first manual npm run coveralls).
 
 
 ## Licence
