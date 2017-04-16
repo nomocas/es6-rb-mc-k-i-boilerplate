@@ -1,5 +1,4 @@
 // Karma configuration
-// Generated on Tue Feb 07 2017 16:25:10 GMT+0100 (CET)
 const babel  = require('rollup-plugin-babel'),
 	babelrc = require('babelrc-rollup').default;
 
@@ -36,7 +35,7 @@ module.exports = function(config) {
 			plugins: [
 				babel(babelrc())
 			],
-			moduleName:'__MY__PROJECT__',
+			moduleName:'KarmaBundle',
 			format: 'iife', // helps prevent naming collisions
 			sourceMap: 'inline', // sensible for testing
 		},
