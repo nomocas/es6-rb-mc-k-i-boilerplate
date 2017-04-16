@@ -1,8 +1,5 @@
 # ES6 module boilerplate with full ES6 test suits and coverage
 
-Inspired from https://istanbul.js.org/docs/tutorials/es2015/ and https://github.com/bcoe/es2015-coverage. 
-Added : rollup bundling and karma runner + clean and complete.
-
 - ES6 sources
 - transpiled with [babel](https://babeljs.io) (to dist/es5/*)
 - bundled with [rollup](https://github.com/rollup/rollup) (to dist/bundles/*)
@@ -20,7 +17,13 @@ Added : rollup bundling and karma runner + clean and complete.
 clone this repo then :
 
 ```
-> npm i
+> npm i 
+```
+
+or
+
+```
+> yarn
 ```
 
 then :
