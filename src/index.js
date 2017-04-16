@@ -1,8 +1,4 @@
-import { Foo } from './foo';
-
-new Foo().doSomething('john'); // just for coverage test
-
-export default class CoverageBabel {
+export default class Dummy {
 	constructor (name='batman') {
 		this.name = name;
 	}
