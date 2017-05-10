@@ -18,22 +18,9 @@
     "cover": "cross-env NODE_ENV=test nyc --reporter=lcov --reporter=text mocha test/*.js",
     "coveralls": "npm run cover && cat ./coverage/lcov.info | coveralls",
     "prepublish": "npm test",
-    "release": "standard-version",
-    "postinstall": "precommit install && prepush install"
-  },
-  "precommit": {
-    "tasks": [
-      "npm run prebuild"
-    ],
-    "onDirtyState": "ask",
-    "coloredOuput": true
-  },
-  "prepush": {
-    "tasks": [
-      "npm test"
-    ],
-    "onDirtyState": "ask",
-    "coloredOuput": true
+    "precommit": "npm prebuild",
+    "prepush": "npm test",
+    "release": "standard-version"
   },
   "commitMsg": {
     "invalidCharsInSubject": false,
@@ -92,6 +79,7 @@
     "cross-env": "^4.0.0",
     "eslint": "^3.15.0",
     "eslint-plugin-import": "^2.2.0",
+    "husky": "^0.13.3",
     "karma": "^1.4.1",
     "karma-chai": "^0.1.0",
     "karma-chrome-launcher": "^2.0.0",
@@ -99,8 +87,6 @@
     "karma-rollup-preprocessor": "^4.0.0",
     "mocha": "^3.2.0",
     "nyc": "^10.2.0",
-    "precommit": "^1.2.2",
-    "prepush": "^3.1.11",
     "rollup": "^0.41.6",
     "rollup-plugin-babel": "^2.7.1",
     "rollup-plugin-commonjs": "^8.0.2",
@@ -110,4 +96,3 @@
     "uglify-js": "^2.7.5"
   }
 }
-
