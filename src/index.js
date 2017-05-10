@@ -4,7 +4,7 @@ export default class Dummy {
 	}
 
 	helloMessage () {
-		var msg = `hello ${this.name}`;
+		const msg = `hello ${this.name}`;
 		return msg;
 	}
 
