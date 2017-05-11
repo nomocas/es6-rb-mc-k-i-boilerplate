@@ -1,5 +1,15 @@
 # ES6 module boilerplate with full ES6 test suits and coverage
 
+[![Travis branch](https://img.shields.io/travis/nomocas/es6-rb-mc-k-i-boilerplate/master.svg)](https://travis-ci.org/nomocas/es6-rb-mc-k-i-boilerplate)
+[![bitHound Overall Score](https://www.bithound.io/github/nomocas/es6-rb-mc-k-i-boilerplate/badges/score.svg)](https://www.bithound.io/github/nomocas/es6-rb-mc-k-i-boilerplate)
+[![dependecies](https://david-dm.org/nomocas/es6-rb-mc-k-i-boilerplate.svg)](https://david-dm.org/)
+[![dev-dependencies](https://img.shields.io/david/dev/nomocas/es6-rb-mc-k-i-boilerplate.svg)](https://david-dm.org/)
+[![npm-downloads](https://img.shields.io/npm/dm/es6-rb-mc-k-i-boilerplate.svg)](https://npm-stat.com/charts.html?package=es6-rb-mc-k-i-boilerplate)
+[![npm](https://img.shields.io/npm/v/es6-rb-mc-k-i-boilerplate.svg)](https://www.npmjs.com/package/es6-rb-mc-k-i-boilerplate)
+[![licence](https://img.shields.io/npm/l/es6-rb-mc-k-i-boilerplate.svg)](https://spdx.org/licenses/MIT)
+[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+
 - ES6 sources
 - transpiled with [babel](https://babeljs.io) (to dist/es5/*)
 - bundled with [rollup](https://github.com/rollup/rollup) (to dist/bundles/*)
@@ -11,6 +21,9 @@
 - [travis.ci](https://travis-ci.org/) config file
 - [esdoc](https://esdoc.org) config file
 - [eslint](http://eslint.org) ES6 base config for src and test
+- [husky](https://github.com/typicode/husky) easy git hooks with already define precommit, prepush and commitmsg hook
+- [validate-commit-msg](https://github.com/kentcdodds/validate-commit-msg) : commit message format precommit validation
+- [commitizen](https://github.com/commitizen/cz-cli): commit message generation tools
 
 ## Usage
 
@@ -29,11 +42,15 @@ or
 then :
 
 - build : `> npm run build`
-- test :  `> mocha` or `> npm test`
+- test :  `> npm test`
 - karma : `> npm run karma`
 - cover : `> npm run cover`
+- coveralls reporting : `> npm run coveralls` (don't forget to add your .coveralls.yml with your api_key)
 - es5-watch : `> npm run es5-watch`
 - bundles-watch : `> npm run bundles-watch`
+- sem-ver and changelog generation : `> npm run release`
+- commitizen : `> npm run cmtz`
+- hand validation of commit messages : `> npm run commitmsg`
 
 ## Produced outputs
 
@@ -48,6 +65,9 @@ Travis is configured to run coveralls by default.
 
 So either you remove coveralls run in travis config file, or add a .coveralls.yml with your "repo_token: ......" before pushing to travis (after a first manual `npm run coveralls`).
 
+## For Commit Message Validation
+
+Format is based on [angular spec](https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md#commit) which has become `conventional commit` (https://github.com/commitizen/cz-conventional-changelog)
 
 ## Licence
 
