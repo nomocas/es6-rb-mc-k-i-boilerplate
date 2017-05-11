@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.1.1"></a>
+## [0.1.1](https://github.com/nomocas/es6-rb-mc-k-i-boilerplate/compare/v0.1.0...v0.1.1) (2017-05-11)
+
+
+### Bug Fixes
+
+* **package:** udate dependencies ([4d61e8a](https://github.com/nomocas/es6-rb-mc-k-i-boilerplate/commit/4d61e8a))
+* **package:** udate dependencies ([14a8748](https://github.com/nomocas/es6-rb-mc-k-i-boilerplate/commit/14a8748))
+
+
+
 <a name="0.1.0"></a>
 # 0.1.0 (2017-04-16)
 
