@@ -2,10 +2,8 @@
 
 [![Travis branch](https://img.shields.io/travis/nomocas/es6-rb-mc-k-i-boilerplate/master.svg)](https://travis-ci.org/nomocas/es6-rb-mc-k-i-boilerplate)
 [![bitHound Overall Score](https://www.bithound.io/github/nomocas/es6-rb-mc-k-i-boilerplate/badges/score.svg)](https://www.bithound.io/github/nomocas/es6-rb-mc-k-i-boilerplate)
-[![dependecies](https://david-dm.org/nomocas/es6-rb-mc-k-i-boilerplate.svg)](https://david-dm.org/)
-[![dev-dependencies](https://img.shields.io/david/dev/nomocas/es6-rb-mc-k-i-boilerplate.svg)](https://david-dm.org/)
-[![npm-downloads](https://img.shields.io/npm/dm/es6-rb-mc-k-i-boilerplate.svg)](https://npm-stat.com/charts.html?package=es6-rb-mc-k-i-boilerplate)
-[![npm](https://img.shields.io/npm/v/es6-rb-mc-k-i-boilerplate.svg)](https://www.npmjs.com/package/es6-rb-mc-k-i-boilerplate)
+[![bitHound Dependencies](https://www.bithound.io/github/nomocas/es6-rb-mc-k-i-boilerplate/badges/dependencies.svg)](https://www.bithound.io/github/nomocas/es6-rb-mc-k-i-boilerplate/master/dependencies/npm)
+[![bitHound Dev Dependencies](https://www.bithound.io/github/nomocas/es6-rb-mc-k-i-boilerplate/badges/devDependencies.svg)](https://www.bithound.io/github/nomocas/es6-rb-mc-k-i-boilerplate/master/dependencies/npm)
 [![licence](https://img.shields.io/npm/l/es6-rb-mc-k-i-boilerplate.svg)](https://spdx.org/licenses/MIT)
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
