@@ -21,6 +21,7 @@
     "precommit": "npm run prebuild",
     "prepush": "npm test",
     "commitmsg": "validate-commit-msg",
+    "cmtz": "git-cz",
     "release": "standard-version"
   },
   "nyc": {
@@ -49,8 +50,10 @@
     "babel-register": "^6.14.0",
     "babelrc-rollup": "^3.0.0",
     "chai": "^3.5.0",
+    "commitizen": "^2.9.6",
     "coveralls": "^2.13.0",
     "cross-env": "^4.0.0",
+    "cz-conventional-changelog": "^2.0.0",
     "eslint": "^3.15.0",
     "eslint-plugin-import": "^2.2.0",
     "husky": "^0.13.3",
@@ -69,5 +72,10 @@
     "standard-version": "^4.0.0",
     "uglify-js": "^2.7.5",
     "validate-commit-msg": "^2.12.1"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
